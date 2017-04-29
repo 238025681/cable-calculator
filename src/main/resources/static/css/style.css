@@ -1,0 +1,41 @@
+body{
+	padding-top: 70px;
+}
+textarea {
+	resize: none;
+	width: 70px;
+	height: 33px;
+	padding-left: 10px;
+	padding-top: 7px;
+}
+
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 250px;
+    overflow-y: auto;
+}
+
+.ui-menu .ui-menu-item a{
+    color: #96f226;
+    border-radius: 0px;
+    border: 1px solid #454545;
+}
+.ui-menu-item-wrapper{
+	background-color: white;
+}
+
+#pdf {
+	
+	width: 920px;
+	height: 600px;
+}
+.modal-dialog {
+	
+	width: 940px;
+	height: 700px;
+}
+

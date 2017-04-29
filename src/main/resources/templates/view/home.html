@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/head :: cars-head}" th:with="pageTitle='Cars'">
+		<title>Wire Calculator</title>
+	</head>
+	<body>
+		
+		<nav th:replace="~{fragments/navigation :: navigation}"></nav>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Калкулатор</h1>
+			</div>
+		</div>
+		<div class="container col-md-6 col-md-offset-3">
+			
+
+			<h1>История на поръчките</h1>
+
+			<table class="table table-hover" >
+				<thead>
+					<tr>
+						<th>№</th>
+						<th>Дата</th>
+						<th>Име</th>
+						<th>Метри</th>
+						<th>#</th>
+					</tr>
+				</thead>
+				<tbody id="requestTableBody">
+					
+				</tbody>
+			</table>
+
+
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Modal Header</h4>
+						</div>
+						<div class="modal-body"  id="pdf"></div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>

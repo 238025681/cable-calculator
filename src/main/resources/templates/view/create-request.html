@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/head :: cars-head}" th:with="pageTitle='Cars'">
+		<title>Wire Calculator</title>
+
+	</head>
+	<body>
+
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form_main">
+				<h4 class="heading"><strong>Създаване на поръчка </strong> <span></span></h4>
+				<br />
+				<a class="btn btn-info" role="button" th:href="@{/}">Начало</a>
+				<br />
+				<div class="form">
+					<form method="post" id="addCable" th:object="${cableModel}">
+
+						<div class="form-group row">
+							<label th:for="material" class="col-2 col-form-label">Материал</label>
+							<div class="col-10">
+								<select id="material" class="form-control" th:field="*{material}">
+									<option value="Cu">Cu</option>
+									<option value="Al">Al</option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="form-group row">
+							<label th:for="name" class="col-2 col-form-label">Сечение</label>
+							<div class="col-10">
+
+								<select class="form-control" name="cut">
+									<option th:each="list : ${list}" th:value="${list.name}" th:text="${list.name}"></option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label th:for="number" class="col-2 col-form-label">Брой Жила</label>
+							<div class="col-10">
+								<input type="number" step="1" min="0" id="number" required="" placeholder="1" class="txt" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label th:for="wire" class="col-2 col-form-label">Метри</label>
+							<div class="col-10">
+								<input type="number" step="1" min="0" id="wire" required="" placeholder="100" class="txt" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<input type="submit" value="Поръчка" class="txt2" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

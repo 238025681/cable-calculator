@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/head :: cars-head}" th:with="pageTitle='Cars'">
+		<title>Wire Calculator</title>
+
+	</head>
+	<body>
+		<nav th:replace="~{fragments/navigation :: navigation}"></nav>
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form_main">
+				<h4 class="heading"><strong>Добави ново жило </strong> <span></span></h4>
+				<div class="form">
+					<form method="post" id="addCable" th:object="${coreModel}">
+
+						<div class="form-group row">
+							<label th:for="material" class="col-2 col-form-label">Материал</label>
+							<div class="col-10">
+								<select id="material" class="form-control" th:field="*{material}">
+									<option value="CU">Cu</option>
+									<option value="AL">Al</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label th:for="cut" class="col-2 col-form-label">Име</label>
+							<div class="col-10">
+								<input type="text" id="cut" required="" placeholder="16 ку" th:field="*{name}"  class="txt" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<label th:for="wire" class="col-2 col-form-label">Сечение</label>
+							<div class="col-10">
+								<input type="number" step="0.01" min="0" id="wire" required="" placeholder="1.71" th:field="*{coreSize}" class="txt" />
+							</div>
+						</div>
+
+
+						<div class="form-group row">
+							<input type="submit" value="Добави" class="txt2" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

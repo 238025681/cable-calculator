@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/head :: cars-head}" th:with="pageTitle='Cars'">
+		<title>Wire Calculator</title>
+
+	</head>
+	<body>
+
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form_main">
+				<h4 class="heading"><strong>Добави ново жило </strong> <span></span></h4>
+				<div class="form">
+					<form method="post" id="addCable" th:object="${cableModel}">
+
+						<div class="form-group row">
+							<label th:for="material" class="col-2 col-form-label">Материал</label>
+							<div class="col-10">
+								<select id="material" class="form-control" th:field="*{material}">
+									<option value="Cu">Cu</option>
+									<option value="Al">Al</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label th:for="cut" class="col-2 col-form-label">Име</label>
+							<div class="col-10">
+								<input type="text" id="cut" required="" placeholder="16 ку" th:field="*{name}"  class="txt" />
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label th:for="cut" class="col-2 col-form-label">Сечение</label>
+							<div class="col-10">
+								<select id="cut" class="form-control" th:field="*{cut}" >
+									<option value="16">16</option>
+									<option value="25">25</option>
+									<option value="35">35</option>
+									<option value="70">70</option>
+									<option value="95">95</option>
+									<option value="120">120</option>
+									<option value="150">150</option>
+									<option value="185">185</option>
+									<option value="240">240</option>
+									<option value="300">300</option>
+									<option value="400">400</option>
+									<option value="500">500</option>
+									<option value="600">600</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label th:for="design" class="col-2 col-form-label">Конструкция</label>
+							<div class="col-10" id="design">
+								<div class="row">
+									<div class="col-md-2 col-md-offset-1 ">
+										<input type="text" th:field="*{layerOne}" class="form-control" maxlength="2" placeholder="0" />
+									</div>
+									<div class="col-md-2 ">
+										<input type="text" th:field="*{layerTwo}" class="form-control" maxlength="2" placeholder="0" />
+									</div>
+									<div class="col-md-2 ">
+										<input type="text" th:field="*{layerThree}" class="form-control" maxlength="2" placeholder="0" />
+									</div>
+									<div class="col-md-2 ">
+										<input type="text" th:field="*{layerFour}" class="form-control" maxlength="2" placeholder="0" />
+									</div>
+									<div class="col-md-2 ">
+										<input type="text" th:field="*{layerFive}" class="form-control" maxlength="2" placeholder="0" />
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label th:for="wire" class="col-2 col-form-label">Жило</label>
+							<div class="col-10">
+								<input type="number" step="0.01" min="0" id="wire" required="" placeholder="1.71" th:field="*{wireCut}" class="txt" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label th:for="degree" class="col-2 col-form-label">Градус</label>
+							<div class="col-10">
+								<select id="degree" class="form-control" th:field="*{degree}" >
+									<option value="0">0</option>
+									<option value="72">72</option>
+									<option value="90">90</option>
+									<option value="120">120</option>
+									<option value="180">180</option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="form-group row">
+							<input type="submit" value="Добави" class="txt2" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

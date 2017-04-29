@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/head :: cars-head}" th:with="pageTitle='Cars'">
+		<title>Wire Calculator</title>
+	</head>
+	<body>
+		
+		<div th:each="t : ${test}">
+			<p  th:text="${t.name}"></p>
+		</div>
+
+	</body>
+</html>

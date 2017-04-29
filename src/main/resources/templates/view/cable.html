@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="~{fragments/head :: cars-head}" th:with="pageTitle='Cars'">
+		<title>Request</title>
+
+	</head>
+	<body>
+		<nav th:replace="~{fragments/navigation :: navigation}"></nav>
+		<div class="col-md-4 col-md-offset-4">
+			<div class="form-mini-container">
+
+
+				<h1>Добави нов кабел</h1>
+
+				<form class="form-mini" method="post"  id="request" th:object="${cable}">
+					<div class="form-row">
+						<input type="text" id="cableName" th:field="*{name}" placeholder="Име на кабел" />
+					</div>
+
+					<div class="form-row">
+						<input type="text" id="conductorName" th:field="*{conductorName}" placeholder="Вид жило" />
+						<button type="button" class="btn btn-success btn-sm"  onclick="getConductors()">Избери Жило</button>
+					</div>
+
+					<div class="form-row">
+						<label>
+							<select id="numberOfConductors" th:field="*{numberOfConductors}">
+								<option value="10">Брой Жила</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</label>
+					</div>
+					<div class="form-row form-last-row">
+						<button type="submit" >Създай поръчка</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Modal Header</h4>
+					</div>
+					<div class="modal-body" id="conductorsName">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+</html>
