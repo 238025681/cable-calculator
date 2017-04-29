@@ -1,7 +1,8 @@
-
 package bg.elkabel.calculator.service;
 
 import bg.elkabel.calculator.models.bind.CableBindModel;
+import bg.elkabel.calculator.models.view.CableViewModel;
+import java.util.List;
 
 /**
  *
@@ -9,5 +10,7 @@ import bg.elkabel.calculator.models.bind.CableBindModel;
  */
 public interface CableService {
 
-	void createCable(CableBindModel cable);
+    void createCable(CableBindModel cable);
+
+    List<CableViewModel> allCables();
 }
